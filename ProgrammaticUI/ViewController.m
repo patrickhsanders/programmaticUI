@@ -23,22 +23,24 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  outputLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - 450 - 15, 40 , 450, 30)];
+  outputLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 40 , self.view.bounds.size.width - 60, 30)];
   outputLabel.text = @"Created at TurnToTech LLC.";
   outputLabel.font = [UIFont systemFontOfSize:24];
   outputLabel.textAlignment = UITextAlignmentCenter;
   [self.view addSubview:outputLabel];
   
   //dynamic button
-  UIButton *dynamicButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 40, 150, 30)];
-  [dynamicButton setTitle:@"Dynamic Button" forState:UIControlStateNormal];
+  UIButton *dynamicButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 80, 200, 30)];
+  [dynamicButton setTitle:@"динамичная кнобка" forState:UIControlStateNormal];
   dynamicButton.backgroundColor = [UIColor blackColor];
   [dynamicButton addTarget:self action:@selector(dynamicButtonPressed) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:dynamicButton];
   
   //segment control
-  segment = [[[UISegmentedControl alloc] initWithFrame:CGRectMake(10, 80, 300, 30) ] initWithItems:[NSArray arrayWithObjects:@"TurnToTech",@"Qcd", nil]];
-  segment.backgroundColor = [UIColor redColor];
+  segment = [[[UISegmentedControl alloc] initWithFrame:CGRectMake(220, 80, 300, 30) ] initWithItems:[NSArray arrayWithObjects:@"TurnToTech",@"Qcd", nil]];
+  segment.backgroundColor = [UIColor blackColor];
+  segment.tintColor = [UIColor whiteColor];
+
   [segment addTarget:self action:@selector(segmentControlChange:) forControlEvents:UIControlEventValueChanged];
   [self.view addSubview:segment];
   
